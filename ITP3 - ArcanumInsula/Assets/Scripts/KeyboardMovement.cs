@@ -24,7 +24,7 @@ public class KeyboardMovement : MonoBehaviour {
 
     void Update()
     {
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 3.0f;
+        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 3.0f; // Time.deltaTime nachlesen https://docs.unity3d.com/ScriptReference/Time-deltaTime.html
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
         transform.Translate(x, 0, 0);

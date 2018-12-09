@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FPS_SCRIPT_TESTSCENE.unity
+- path: Assets/Scenes/ENEMY_SPAWNSCENE.unity
   isLoaded: 1
   isActive: 1
