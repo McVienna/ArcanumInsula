@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
 {
-
+    //TODO: Add logic for Jump Animation -> Use Animator IsJump
     // Use this for initialization
     private GameObject m_animatedPlayer;
     private Animator m_animator;
     private Transform m_playerTransform;
     private Vector3 m_currPos;
     private Vector3 m_prevPos;
-
-
 
     void Start()
     {
