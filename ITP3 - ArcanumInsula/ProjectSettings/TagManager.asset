@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - player_anim
+  - ritual_Stone
+  - patrol_Point
+  - patrol_Point0
+  - patrol_Point1
   layers:
   - Default
   - TransparentFX

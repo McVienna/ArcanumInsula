@@ -69,6 +69,8 @@
     <Compile Include="Assets\RainMaker\Prefab\RainScript.cs" />
     <Compile Include="Assets\RainMaker\Prefab\RainScript2D.cs" />
     <Compile Include="Assets\TEST\Scripts\AnimationTrigger.cs" />
+    <Compile Include="Assets\TEST\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\TEST\Scripts\GroundCheckAI.cs" />
     <Compile Include="Assets\TEST\Scripts\KeyboardMovement.cs" />
     <Compile Include="Assets\TEST\Scripts\MouseLook.cs" />
     <None Include="Assets\MORPH3D\Vendor\Unity\Shaders\Standard\StandardSpecular-doublesided.shader" />
