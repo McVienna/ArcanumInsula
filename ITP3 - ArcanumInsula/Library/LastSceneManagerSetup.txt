@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TEST/Scenes/TERRAIN.unity
+- path: Assets/TEST/Scenes/RITUAL.unity
   isLoaded: 1
   isActive: 1

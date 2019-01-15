@@ -9,6 +9,8 @@ TagManager:
   - patrol_Point
   - patrol_Point0
   - patrol_Point1
+  - port_point
+  - enemy
   layers:
   - Default
   - TransparentFX

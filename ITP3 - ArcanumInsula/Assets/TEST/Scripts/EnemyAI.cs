@@ -73,6 +73,8 @@ public class EnemyAI : MonoBehaviour {
         }
 
         m_reachedTarget = false;
+
+        stoneEntered = false;
     }
 
     // Update is called once per frame
@@ -84,8 +86,13 @@ public class EnemyAI : MonoBehaviour {
         //Get the right targe out of the array -> used mod%2 cuz there are only 2 Elements in Array e.g. the return value can only be 0 or 1 
         target = m_pointArray[m_temp_target_count % 2];
 
+        if(stoneEntered == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, m_otherTransform.position, step);
+        }
+
         //As long as the target was not reached
-        if(m_reachedTarget == false)
+        if(m_reachedTarget == false && stoneEntered == false)
         {
             m_isPatrouling = true;
 
@@ -99,7 +106,7 @@ public class EnemyAI : MonoBehaviour {
                 //if the target was reached raise the counter by 1 to become the next element out of the array
                 m_temp_target_count++;
             }
-    }
+        }
 
         m_reachedTarget = false;
 
@@ -122,6 +129,8 @@ public class EnemyAI : MonoBehaviour {
     //If Object enters Trigger Area of BoxCollider
     private void OnTriggerEnter(Collider other)
     {
+        float step = m_movementSpeed * Time.deltaTime;
+
         if (other.tag == "ritual_Stone")
         {
             stoneEntered = true;
