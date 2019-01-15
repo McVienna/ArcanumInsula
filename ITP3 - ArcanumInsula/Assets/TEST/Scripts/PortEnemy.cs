@@ -15,6 +15,7 @@ public class PortEnemy : MonoBehaviour {
 	void Start ()
     {
         doPort = false;
+
         m_portTo = this.gameObject.transform;
 
 
@@ -28,13 +29,14 @@ public class PortEnemy : MonoBehaviour {
         if (doPort == true)
         {
             Debug.Log("Do Port is set to true");
-            GameObject.Destroy(this);
 
             m_newEnemy = GameObject.Instantiate(m_enemyPrefab, m_portTo);
             Rig = m_newEnemy.GetComponent<Rigidbody>();
             Rig.freezeRotation = true;
 
             doPort = false;
+
+            GameObject.Destroy(this);
         }
 	}
 }

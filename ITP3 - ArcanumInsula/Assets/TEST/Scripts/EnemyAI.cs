@@ -23,8 +23,10 @@ public class EnemyAI : MonoBehaviour {
     {
         var localScale_x = 0.0f;
         var localScale_y = 0.0f;
+        var localScale_z = 0.0f;
 
         BoxCollider groundCollider = this.GetComponent<BoxCollider>();
+
 
         //initialising important member variables
         m_boxSize = groundCollider.size;//--- Get Transform from Box/Ground collider
@@ -36,6 +38,7 @@ public class EnemyAI : MonoBehaviour {
         //Get localScale of BoxCollider transform in order to Spawn patrolPoints in Area
         localScale_x = m_boxSize.x;
         localScale_y = m_boxSize.y;
+        localScale_z = m_boxSize.z;
 
         //Instanciate 2 patrolPoints inside Enemy Area
         for (int i = 0; i < 2; i++)
@@ -49,8 +52,8 @@ public class EnemyAI : MonoBehaviour {
             m_patrolPoint.name = "patrol_Point" + i;
             m_patrolPoint.tag = "patrol_Point" + i;
 
-            var leftSide = new Vector3((m_enemyPosition.x - (localScale_x / 2)), (m_enemyPosition.y + Random.Range(0.0f, localScale_y)), 0);
-            var rightSide = new Vector3((m_enemyPosition.x + (localScale_x / 2)), (m_enemyPosition.y + Random.Range(0.0f, localScale_y)), 0);
+            var leftSide = new Vector3((m_enemyPosition.x - (localScale_x / 2)), m_enemyPosition.y, (m_enemyPosition.z + Random.Range(0.0f, localScale_z)));
+            var rightSide = new Vector3((m_enemyPosition.x + (localScale_x / 2)), m_enemyPosition.y, (m_enemyPosition.z + Random.Range(0.0f, localScale_z)));
 
             //Used to create Patrool Points in Enemy Area one at the left Side border one on the Right
             if (i == 0)
@@ -137,6 +140,14 @@ public class EnemyAI : MonoBehaviour {
 
             m_other = GameObject.FindGameObjectWithTag("ritual_Stone");
             m_otherTransform = m_other.transform;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        for(int i = 0; i < 2; i++)
+        {
+            Destroy(m_pointArray[i]);
         }
     }
 
